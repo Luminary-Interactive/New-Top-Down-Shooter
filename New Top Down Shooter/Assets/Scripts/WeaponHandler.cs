@@ -35,15 +35,15 @@ public class WeaponHandler : MonoBehaviour
         }
         void EquipPrimary()
         {
-
+            throw new System.NotImplementedException();
         }
         void EquipSecondary()
         {
-
+            throw new System.NotImplementedException();
         }
         void EquipThrowable()
         {
-
+            throw new System.NotImplementedException();
         }
     }
     private void OnEnable()
