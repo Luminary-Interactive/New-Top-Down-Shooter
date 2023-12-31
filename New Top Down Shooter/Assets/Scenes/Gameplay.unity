@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 563522721}
   - component: {fileID: 563522720}
   - component: {fileID: 563522726}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -639,7 +639,7 @@ GameObject:
   - component: {fileID: 1387593961}
   - component: {fileID: 1387593960}
   - component: {fileID: 1387593959}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Direction
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -862,7 +862,7 @@ GameObject:
   - component: {fileID: 1592099032}
   - component: {fileID: 1592099031}
   - component: {fileID: 1592099030}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Direction
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -968,7 +968,7 @@ GameObject:
   - component: {fileID: 1736320109}
   - component: {fileID: 1736320108}
   - component: {fileID: 1736320107}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -987,7 +987,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b758873d02df8534e9b41afa44a8d6cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _weapon: 0
+  _weapon: 1
   _sightDistance: 100
 --- !u!136 &1736320108
 CapsuleCollider:
