@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ebbb8375c2ea1d49a7c71d037784455, type: 3}
   m_Name: Reference Manager
   m_EditorClassIdentifier: 
-  <Bullet>k__BackingField: {fileID: 0}
+  <Bullet>k__BackingField: {fileID: 3297005228447406087, guid: 6d05027c060913349bbe1299c57616d5,
+    type: 3}
