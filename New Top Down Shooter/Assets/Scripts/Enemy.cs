@@ -6,14 +6,15 @@ namespace TimeStrike.Enemies
     public class Enemy : MonoBehaviour
     {
         protected EnemyWeaponImplementations.IEnemyWeapon WeaponImplementation { get; private set; }
+        protected Transform Player { get; private set; }
+        protected bool HasSeenPlayer { get; private set; }
 
         [SerializeField]
         private WeaponInspectorSelection.WeaponSelectorEnum _weapon;
         [SerializeField]
         private float _sightDistance;
-
-        private bool _lockOnToPlayer;
-        private Transform _player;
+        [SerializeField]
+        private LayerMask _sightMask;
 
         protected virtual void Awake()
         {
@@ -22,29 +23,29 @@ namespace TimeStrike.Enemies
         }
         private void Start()
         {
-            _player = GameObject.FindGameObjectWithTag("Player").transform;
+            Player = GameObject.FindGameObjectWithTag("Player").transform;
             
-            if (_player is null) Debug.LogWarning("Enemy was unable to find player. Ensure there is a player in scene, and it is tagged with the Player tag.", this);
+            if (Player is null) Debug.LogWarning("Enemy was unable to find player. Ensure there is a player in scene, and it is tagged with the Player tag.", this);
         }
         protected virtual void Update()
         {
-            if (_player is null) return;
+            if (Player is null) return;
 
-            if (_lockOnToPlayer)
+            if (HasSeenPlayer)
             {
-                transform.LookAt(_player);
+                transform.LookAt(Player);
             }
             else
             {
-                if (CanSeePlayer()) _lockOnToPlayer = true;
+                if (CanSeePlayer()) HasSeenPlayer = true;
             }
             WeaponImplementation.Update();
         }
         public bool CanSeePlayer()
         {
-            Ray ray = new Ray(transform.position, _player.position - transform.position);
-            Physics.Raycast(ray, out var hitData, _sightDistance, Physics.DefaultRaycastLayers);
-            if (hitData.collider.transform == _player) return true;
+            Ray ray = new Ray(transform.position, Player.position - transform.position);
+            Physics.Raycast(ray, out var hitData, _sightDistance, _sightMask);
+            if (hitData.collider.transform == Player) return true;
             
             return false;
         }

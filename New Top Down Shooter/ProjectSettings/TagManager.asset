@@ -14,8 +14,8 @@ TagManager:
   - EnemyBullet
   - Player
   - Enemy
-  - 
-  - 
+  - Wall
+  - Floor
   - 
   - 
   - 
